@@ -155,7 +155,7 @@ class HTTPRequestHandler {
         }.resume()  // Starting the dataTask
     }
     
-    //  Function to perform a task - Calls executeGetRequest(with urlString:) and receives data from the closure.
+    //  Function to search for recipes using keywords - Calls executeGetRequest(with urlString:) and receives data from the closure.
     func searchByIngredients(searchString: String, completion: @escaping ([Recipe]) -> ()) {
         let whitespaceRemoved = searchString.replacingOccurrences(of: " ", with: "") // remove whitespace from search string
         let finalFormattedString = whitespaceRemoved.replacingOccurrences(of: ",", with: ",+") // Formats search string if commas are present
@@ -179,10 +179,33 @@ class HTTPRequestHandler {
         }
     }
     
-    //  Function to perform a task - Calls executeGetRequest(with urlString:) and receives data from the closure.
+    //  Function to get a specific recipe information - Calls executeGetRequest(with urlString:) and receives data from the closure.
     func getRecipeInformation(recipeID: String, completion: @escaping (RecipeInformation) -> ()) {
         
         let urlString = "https://api.spoonacular.com/recipes/\(recipeID)/information?includeNutrition=false&apiKey=\(APICALLS.APIKey)"
+        
+        //  Calling executeGetRequest(with:)
+        executeGetRequest(with: urlString) { (data) in  // Data received from closure
+                //  JSON parsing
+                let decoder = JSONDecoder()
+                guard let results = try? decoder.decode(RecipeInformation.self, from: data!) else {
+                    print("no results")
+                    return
+                }
+                
+                let recipeInfo: RecipeInformation = results
+            
+                //  Passing parsed JSON data from closure to the calling method.
+                completion(recipeInfo)
+        }
+    }
+    
+    //  Function to get a random recipe information - Calls executeGetRequest(with urlString:) and receives data from the closure.
+    func getRandomRecipe(completion: @escaping (RecipeInformation) -> ()) {
+        
+        let numberOfResults = "1" // Number of results to return
+        
+        let urlString = "https://api.spoonacular.com/recipes/random?number=\(numberOfResults)&apiKey=\(APICALLS.APIKey)"
         
         //  Calling executeGetRequest(with:)
         executeGetRequest(with: urlString) { (data) in  // Data received from closure
