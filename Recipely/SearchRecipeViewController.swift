@@ -57,6 +57,14 @@ class SearchRecipeViewController: UIViewController {
         }
     }
     
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func historyButtonPressed(_ sender: Any) {
+        
+    }
+    
 }
 
 extension SearchRecipeViewController: UITableViewDelegate, UITableViewDataSource {

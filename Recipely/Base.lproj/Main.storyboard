@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tP6-Rf-dX8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P4F-47-Q8b">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Recipe View Controller-->
+        <!--Search for Recipes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchRecipeViewController" customModule="Recipely" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,6 +77,7 @@
                                             <outlet property="recipeImage" destination="XnV-lh-eex" id="pVq-8v-yEd"/>
                                             <outlet property="recipeLikeCount" destination="PYD-fY-XMV" id="ecp-qp-nSP"/>
                                             <outlet property="recipeTitle" destination="oHh-Tk-llE" id="ISr-JD-bv0"/>
+                                            <segue destination="e7N-PU-ot2" kind="show" id="eFb-8n-Jqu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -85,7 +86,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="22Z-bg-lZm"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Ingredient(s)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="q69-Wr-4WJ">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Ingredient(s) - E.g. flour,sugar,salt" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="q69-Wr-4WJ">
                                 <rect key="frame" x="0.0" y="88" width="366" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -107,9 +108,18 @@
                             <constraint firstItem="XR9-9e-U7C" firstAttribute="top" secondItem="xk3-vK-xoD" secondAttribute="bottom" id="lwh-M8-a76"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TLo-KG-LL0">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Lhh-7W-Pbp"/>
-                        <barButtonItem key="rightBarButtonItem" title="History" id="EP4-rk-sdF"/>
+                    <navigationItem key="navigationItem" title="Search for Recipes" id="TLo-KG-LL0">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Lhh-7W-Pbp">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="BYZ-38-t0r" id="2ZE-vJ-UoU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="EP4-rk-sdF">
+                            <connections>
+                                <action selector="historyButtonPressed:" destination="BYZ-38-t0r" id="62K-mb-8yL"/>
+                                <segue destination="nab-l5-sEB" kind="show" id="HgF-2b-e6F"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="recipeTableview" destination="XR9-9e-U7C" id="QVw-QC-YiS"/>
@@ -128,15 +138,40 @@
                     <view key="view" contentMode="scaleToFill" id="Lhh-v2-pNt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMg-w5-tXG">
+                                <rect key="frame" x="161" y="423.5" width="92" height="49"/>
+                                <color key="backgroundColor" red="0.0" green="0.34254951719999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bMg-w5-tXG" secondAttribute="height" multiplier="73:39" id="aSG-xo-wFB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.95899598929999996" green="0.92391804700000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="tP6-Rf-dX8" kind="presentation" id="K0N-9p-V9D"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="leh-WB-FHP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bMg-w5-tXG" firstAttribute="centerX" secondItem="Lhh-v2-pNt" secondAttribute="centerX" id="Wa9-RS-nXB"/>
+                            <constraint firstItem="bMg-w5-tXG" firstAttribute="centerY" secondItem="Lhh-v2-pNt" secondAttribute="centerY" id="ihP-0y-1lv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvR-yb-X5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1834.7826086956522" y="124.55357142857142"/>
+            <point key="canvasLocation" x="-628" y="125"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites-->
         <scene sceneID="0Me-8n-2IP">
             <objects>
                 <viewController id="nab-l5-sEB" sceneMemberID="viewController">
@@ -146,12 +181,13 @@
                         <viewLayoutGuide key="safeArea" id="L63-AX-0vd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Favorites" id="bES-2a-fNh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U97-3G-g3m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2644.9275362318845" y="124.55357142857142"/>
+            <point key="canvasLocation" x="2064" y="-174"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Details-->
         <scene sceneID="5Hr-oM-Fqc">
             <objects>
                 <viewController id="e7N-PU-ot2" sceneMemberID="viewController">
@@ -161,15 +197,16 @@
                         <viewLayoutGuide key="safeArea" id="TDL-FV-f1T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Recipe Details" id="8Lh-Wk-No0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZ8-Oh-wAO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3447.826086956522" y="124.55357142857142"/>
+            <point key="canvasLocation" x="2064" y="509"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8gc-cl-KMz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tP6-Rf-dX8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="tP6-Rf-dX8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N7U-Oy-Ell">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
