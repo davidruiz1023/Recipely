@@ -149,7 +149,7 @@ class HTTPRequestHandler {
                 print(error.debugDescription)
             } else {
                 //  Passing the data from closure to the calling method
-                print("JSON String: \(String(describing: String(data: data!, encoding: .utf8)))") // Print RAW JSON string from downloaded data
+                //print("JSON String: \(String(describing: String(data: data!, encoding: .utf8)))") // Print RAW JSON string from downloaded data
                 completion(data)
             }
         }.resume()  // Starting the dataTask
@@ -157,11 +157,11 @@ class HTTPRequestHandler {
     
     //  Function to perform a task - Calls executeGetRequest(with urlString:) and receives data from the closure.
     func searchByIngredients(searchString: String, completion: @escaping ([Recipe]) -> ()) {
+        let whitespaceRemoved = searchString.replacingOccurrences(of: " ", with: "") // remove whitespace from search string
+        let finalFormattedString = whitespaceRemoved.replacingOccurrences(of: ",", with: ",+") // Formats search string if commas are present
+        let numberOfResults = "10" // Number of results to return
         
-        let formattedString = searchString.replacingOccurrences(of: ",", with: ",+") // Formats search string
-        let numberOfResults = "2" // Number of results to return
-        
-        let urlString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(formattedString)&number=\(numberOfResults)&apiKey=\(APICALLS.APIKey)"
+        let urlString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(finalFormattedString)&number=\(numberOfResults)&apiKey=\(APICALLS.APIKey)"
         
         //  Calling executeGetRequest(with:)
         executeGetRequest(with: urlString) { (data) in  // Data received from closure

@@ -27,20 +27,33 @@ class SearchRecipeViewController: UIViewController {
         // If searchbar is not empty, perform network request using keywords in searchbar
         if !searchBarTextField.text!.isEmpty {
             httpHandler.searchByIngredients(searchString: searchBarTextField.text!) { (recipeList: [Recipe]) in
-                for recipe in recipeList {
-                    print(recipe)
-                }
-                
-                // assign the downloaded list of recipes to recipeList
-                self.recipeList = recipeList
-                
-                // reload table view on main thread
-                DispatchQueue.main.async {
-                    self.recipeTableview.reloadData()
+                if !recipeList.isEmpty {
+                    // print all recipes in recipeList to console window
+                    for recipe in recipeList {
+                        print(recipe)
+                    }
+                    
+                    // assign the downloaded list of recipes to recipeList
+                    self.recipeList = recipeList
+                    
+                    // reload table view on main thread
+                    DispatchQueue.main.async {
+                        self.recipeTableview.reloadData()
+                    }
+                } else {
+                    // show alert that no results were found. Display on mainthread
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "No Results", message: NSLocalizedString("No Recipes found with searched ingredient(s). Try searching with different ingredients", comment: ""), preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default))
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                 }
             }
         } else {
-            // show alert that search bar is empty
+                // show alert that search bar is empty
+                let alertController = UIAlertController(title: "Empty Search", message: NSLocalizedString("Search bar is empty. Enter ingredients into search bar. Separate with comma if more than one is searched", comment: ""), preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default))
+                present(alertController, animated: true, completion: nil)
         }
     }
     
