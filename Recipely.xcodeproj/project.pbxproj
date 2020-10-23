@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		635E4199253FB5C4005DEE7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E4198253FB5C4005DEE7C /* AppDelegate.swift */; };
 		635E419B253FB5C4005DEE7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E419A253FB5C4005DEE7C /* SceneDelegate.swift */; };
-		635E419D253FB5C4005DEE7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E419C253FB5C4005DEE7C /* ViewController.swift */; };
+		635E419D253FB5C4005DEE7C /* SearchRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E419C253FB5C4005DEE7C /* SearchRecipeViewController.swift */; };
 		635E41A0253FB5C5005DEE7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635E419E253FB5C5005DEE7C /* Main.storyboard */; };
 		635E41A2253FB5C6005DEE7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635E41A1253FB5C6005DEE7C /* Assets.xcassets */; };
 		635E41A5253FB5C6005DEE7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635E41A3253FB5C6005DEE7C /* LaunchScreen.storyboard */; };
+		636A61052542557200F34FC3 /* HTTPRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A61042542557200F34FC3 /* HTTPRequestHandler.swift */; };
+		636A610925426E0B00F34FC3 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A610825426E0B00F34FC3 /* RecipeTableViewCell.swift */; };
+		8C227DB3C6A6633CF2918324 /* Pods_Recipely.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB03E1CF7F26A2DFC6C0EE17 /* Pods_Recipely.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		635E4195253FB5C4005DEE7C /* Recipely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635E4198253FB5C4005DEE7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635E419A253FB5C4005DEE7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		635E419C253FB5C4005DEE7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		635E419C253FB5C4005DEE7C /* SearchRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeViewController.swift; sourceTree = "<group>"; };
 		635E419F253FB5C5005DEE7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		635E41A1253FB5C6005DEE7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		635E41A4253FB5C6005DEE7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		635E41A6253FB5C6005DEE7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		636A61042542557200F34FC3 /* HTTPRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestHandler.swift; sourceTree = "<group>"; };
+		636A610825426E0B00F34FC3 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		AC4A662E2D8AD56E14BE39CB /* Pods-Recipely.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipely.debug.xcconfig"; path = "Target Support Files/Pods-Recipely/Pods-Recipely.debug.xcconfig"; sourceTree = "<group>"; };
+		CB03E1CF7F26A2DFC6C0EE17 /* Pods_Recipely.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipely.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9D0AE631A6E3772C426B7B9 /* Pods-Recipely.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipely.release.xcconfig"; path = "Target Support Files/Pods-Recipely/Pods-Recipely.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C227DB3C6A6633CF2918324 /* Pods_Recipely.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				635E4197253FB5C4005DEE7C /* Recipely */,
 				635E4196253FB5C4005DEE7C /* Products */,
+				6596B9EEDF5F64C1DB42E4A3 /* Pods */,
+				EBE0F4A0603E0594733789F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +69,33 @@
 			children = (
 				635E4198253FB5C4005DEE7C /* AppDelegate.swift */,
 				635E419A253FB5C4005DEE7C /* SceneDelegate.swift */,
-				635E419C253FB5C4005DEE7C /* ViewController.swift */,
+				635E419C253FB5C4005DEE7C /* SearchRecipeViewController.swift */,
 				635E419E253FB5C5005DEE7C /* Main.storyboard */,
 				635E41A1253FB5C6005DEE7C /* Assets.xcassets */,
 				635E41A3253FB5C6005DEE7C /* LaunchScreen.storyboard */,
 				635E41A6253FB5C6005DEE7C /* Info.plist */,
+				636A61042542557200F34FC3 /* HTTPRequestHandler.swift */,
+				636A610825426E0B00F34FC3 /* RecipeTableViewCell.swift */,
 			);
 			path = Recipely;
+			sourceTree = "<group>";
+		};
+		6596B9EEDF5F64C1DB42E4A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC4A662E2D8AD56E14BE39CB /* Pods-Recipely.debug.xcconfig */,
+				E9D0AE631A6E3772C426B7B9 /* Pods-Recipely.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EBE0F4A0603E0594733789F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB03E1CF7F26A2DFC6C0EE17 /* Pods_Recipely.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 635E41A9253FB5C7005DEE7C /* Build configuration list for PBXNativeTarget "Recipely" */;
 			buildPhases = (
+				45C1779FE4F82D51C5D2B96F /* [CP] Check Pods Manifest.lock */,
 				635E4191253FB5C4005DEE7C /* Sources */,
 				635E4192253FB5C4005DEE7C /* Frameworks */,
 				635E4193253FB5C4005DEE7C /* Resources */,
+				024F99F8A982CEEF41BF1312 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +165,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		024F99F8A982CEEF41BF1312 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recipely/Pods-Recipely-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recipely/Pods-Recipely-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Recipely/Pods-Recipely-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45C1779FE4F82D51C5D2B96F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Recipely-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		635E4191253FB5C4005DEE7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635E419D253FB5C4005DEE7C /* ViewController.swift in Sources */,
+				635E419D253FB5C4005DEE7C /* SearchRecipeViewController.swift in Sources */,
+				636A610925426E0B00F34FC3 /* RecipeTableViewCell.swift in Sources */,
 				635E4199253FB5C4005DEE7C /* AppDelegate.swift in Sources */,
+				636A61052542557200F34FC3 /* HTTPRequestHandler.swift in Sources */,
 				635E419B253FB5C4005DEE7C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +360,7 @@
 		};
 		635E41AA253FB5C7005DEE7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC4A662E2D8AD56E14BE39CB /* Pods-Recipely.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +379,7 @@
 		};
 		635E41AB253FB5C7005DEE7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9D0AE631A6E3772C426B7B9 /* Pods-Recipely.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
