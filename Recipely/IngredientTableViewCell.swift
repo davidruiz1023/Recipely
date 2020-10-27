@@ -1,17 +1,17 @@
 //
-//  RecipeTableViewCell.swift
+//  IngredientTableViewCell.swift
 //  Recipely
 //
-//  Created by David Ruiz on 10/22/20.
+//  Created by Mireya Leon on 10/24/20.
 //
 
 import UIKit
 
-class RecipeTableViewCell: UITableViewCell {
-    @IBOutlet weak var recipeImage: UIImageView!
-    @IBOutlet weak var recipeTitle: UILabel!
-    @IBOutlet weak var recipeLikeCount: UILabel!
-    
+class IngredientTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var metricLabel: UILabel!
+    @IBOutlet weak var ingredientNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

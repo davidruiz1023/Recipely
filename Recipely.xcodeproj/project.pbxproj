@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		635E41A5253FB5C6005DEE7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635E41A3253FB5C6005DEE7C /* LaunchScreen.storyboard */; };
 		636A61052542557200F34FC3 /* HTTPRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A61042542557200F34FC3 /* HTTPRequestHandler.swift */; };
 		636A610925426E0B00F34FC3 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A610825426E0B00F34FC3 /* RecipeTableViewCell.swift */; };
+		6A4C2FF025431A39006EF9FD /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C2FEF25431A39006EF9FD /* RecipeDetailViewController.swift */; };
+		6A4C2FF22544DF72006EF9FD /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C2FF12544DF72006EF9FD /* IngredientTableViewCell.swift */; };
+		6A4C2FF425450A3E006EF9FD /* InstructionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C2FF325450A3D006EF9FD /* InstructionTableViewCell.swift */; };
 		8C227DB3C6A6633CF2918324 /* Pods_Recipely.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB03E1CF7F26A2DFC6C0EE17 /* Pods_Recipely.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		635E41A6253FB5C6005DEE7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		636A61042542557200F34FC3 /* HTTPRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestHandler.swift; sourceTree = "<group>"; };
 		636A610825426E0B00F34FC3 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		6A4C2FEF25431A39006EF9FD /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		6A4C2FF12544DF72006EF9FD /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		6A4C2FF325450A3D006EF9FD /* InstructionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTableViewCell.swift; sourceTree = "<group>"; };
 		AC4A662E2D8AD56E14BE39CB /* Pods-Recipely.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipely.debug.xcconfig"; path = "Target Support Files/Pods-Recipely/Pods-Recipely.debug.xcconfig"; sourceTree = "<group>"; };
 		CB03E1CF7F26A2DFC6C0EE17 /* Pods_Recipely.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipely.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D0AE631A6E3772C426B7B9 /* Pods-Recipely.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipely.release.xcconfig"; path = "Target Support Files/Pods-Recipely/Pods-Recipely.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +82,9 @@
 				635E41A6253FB5C6005DEE7C /* Info.plist */,
 				636A61042542557200F34FC3 /* HTTPRequestHandler.swift */,
 				636A610825426E0B00F34FC3 /* RecipeTableViewCell.swift */,
+				6A4C2FEF25431A39006EF9FD /* RecipeDetailViewController.swift */,
+				6A4C2FF12544DF72006EF9FD /* IngredientTableViewCell.swift */,
+				6A4C2FF325450A3D006EF9FD /* InstructionTableViewCell.swift */,
 			);
 			path = Recipely;
 			sourceTree = "<group>";
@@ -86,7 +95,6 @@
 				AC4A662E2D8AD56E14BE39CB /* Pods-Recipely.debug.xcconfig */,
 				E9D0AE631A6E3772C426B7B9 /* Pods-Recipely.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,8 +222,11 @@
 			files = (
 				635E419D253FB5C4005DEE7C /* SearchRecipeViewController.swift in Sources */,
 				636A610925426E0B00F34FC3 /* RecipeTableViewCell.swift in Sources */,
+				6A4C2FF22544DF72006EF9FD /* IngredientTableViewCell.swift in Sources */,
 				635E4199253FB5C4005DEE7C /* AppDelegate.swift in Sources */,
 				636A61052542557200F34FC3 /* HTTPRequestHandler.swift in Sources */,
+				6A4C2FF025431A39006EF9FD /* RecipeDetailViewController.swift in Sources */,
+				6A4C2FF425450A3E006EF9FD /* InstructionTableViewCell.swift in Sources */,
 				635E419B253FB5C4005DEE7C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +377,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Recipely/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,6 +397,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Recipely/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
