@@ -10,7 +10,6 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     
 
    
-    @IBOutlet weak var detailsScrollView: UIScrollView!
     
     @IBOutlet weak var instructionsTableview: UITableView!
     @IBOutlet weak var ingredientsTableView: UITableView!
@@ -53,10 +52,10 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
        
         httpHandler.getRecipeInformation(recipeID: currentRecipe.id!.description) { (recipeInfo: RecipeInformation) in
             DispatchQueue.main.async {
-                self.recipeNameLabel.text = recipeInfo.title
+                self.recipeNameLabel.text = self.currentRecipe.title
                 self.recipeInfo = recipeInfo
-                self.cookTimeLabel.text = String(recipeInfo.readyInMinutes!) + " min"
-                self.servingsLabel.text = String(recipeInfo.servings!) + " servings"
+                self.cookTimeLabel.text = String(recipeInfo.readyInMinutes ?? 0) + " min"
+                self.servingsLabel.text = String(recipeInfo.servings ?? 0) + " servings"
                 self.scoreLabel.text = (recipeInfo.healthScore?.description ?? "--" ) + " health score"
                 self.extendedIngredients = recipeInfo.extendedIngredients!
                 
@@ -80,7 +79,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                             let regex = try! NSRegularExpression(pattern: "[^0-9]\\s{2,}")
                             if regex.firstMatch(in: line, options: [], range: range) != nil {
                                 if line[line.startIndex].isNumber {
-                                    line = regex.stringByReplacingMatches(in: line, options:[], range: range, withTemplate: String(line[line.startIndex]) + " ")
+                                    line = regex.stringByReplacingMatches(in: line, options:[], range: range, withTemplate: String(line[line.startIndex]) + ".  ")
                                 }
                             }
                             self.stepsBreakDown.append(line.trimmingCharacters(in: .whitespaces))
@@ -95,11 +94,13 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 }
                 
                 let recipeImage = recipeInfo.image
-                let imageUrl = URL(string: String(recipeImage!))
-                let data = try? Data(contentsOf: imageUrl!)
-                    
-                if let imageData = data {
-                    self.recipeImageView.image = UIImage(data: imageData)
+                if recipeImage != nil {
+                    let imageUrl = URL(string: String(recipeImage!))
+                    let data = try? Data(contentsOf: imageUrl!)
+                        
+                    if let imageData = data {
+                        self.recipeImageView.image = UIImage(data: imageData)
+                    }
                 }
                 let tintView = UIView()
                 tintView.backgroundColor = UIColor(white: 0, alpha: 0.2)
