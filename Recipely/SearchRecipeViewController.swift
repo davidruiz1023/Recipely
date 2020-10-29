@@ -101,12 +101,15 @@ extension SearchRecipeViewController: UITableViewDelegate, UITableViewDataSource
     
     // send recipe information to Recipe Detail View Controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "recipeDetailsSegue" {
             let cell = sender as! UITableViewCell
             if let indexPath = recipeTableview.indexPath(for: cell) {
                 let selectedRecipe = recipeList[indexPath.row]
                 let detailViewController = segue.destination as! RecipeDetailViewController
                 detailViewController.currentRecipe = selectedRecipe
             }
+        }
+            
             
     }
     

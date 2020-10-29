@@ -78,7 +78,7 @@
                                             <outlet property="recipeImage" destination="XnV-lh-eex" id="pVq-8v-yEd"/>
                                             <outlet property="recipeLikeCount" destination="PYD-fY-XMV" id="ecp-qp-nSP"/>
                                             <outlet property="recipeTitle" destination="oHh-Tk-llE" id="ISr-JD-bv0"/>
-                                            <segue destination="e7N-PU-ot2" kind="show" id="eFb-8n-Jqu"/>
+                                            <segue destination="e7N-PU-ot2" kind="show" identifier="recipeDetailsSegue" id="eFb-8n-Jqu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -132,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="1960.8695652173915" y="124.55357142857142"/>
         </scene>
-        <!--Item-->
+        <!--Shopping List-->
         <scene sceneID="Bjo-bK-gzn">
             <objects>
                 <viewController id="dWm-z5-3Qt" sceneMemberID="viewController">
@@ -142,7 +142,7 @@
                         <viewLayoutGuide key="safeArea" id="Q6B-Ns-AP5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="0jW-0C-boF"/>
+                    <tabBarItem key="tabBarItem" title="Shopping List" id="0jW-0C-boF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZP9-l8-JkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
