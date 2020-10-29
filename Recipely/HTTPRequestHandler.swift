@@ -8,7 +8,7 @@
 import Foundation
 
 struct APICALLS {
-    static let APIKey = "a8a6f2414d5040ea985ba84ec0ce7ace" // Your API KEY
+    static let APIKey = "34b808261c6f4cf1b9e4c2e786bd49a5" // Your API KEY
 }
 
 // Recipe object
@@ -82,11 +82,14 @@ struct RecipeInformation: Codable {
     let winePairing : WinePairing?
 }
 
-//struct AnalyzedInstruction:Codable {
-//    let name: String?
-//    let steps: [Step]?
-//
-//}
+struct AnalyzedInstruction:Codable {
+    let steps: [String]
+}
+
+struct Step:Codable {
+    let number:Int?
+    let step:String?
+}
 
 struct WinePairing: Codable {
     let pairedWines : [String]?
@@ -182,7 +185,7 @@ class HTTPRequestHandler {
     //  Function to get a specific recipe information - Calls executeGetRequest(with urlString:) and receives data from the closure.
     func getRecipeInformation(recipeID: String, completion: @escaping (RecipeInformation) -> ()) {
         
-        let urlString = "https://api.spoonacular.com/recipes/\(recipeID)/information?includeNutrition=false&apiKey=\(APICALLS.APIKey)"
+        let urlString = "https://api.spoonacular.com/recipes/\(recipeID)/information?includeNutrition=true&apiKey=\(APICALLS.APIKey)"
         
         //  Calling executeGetRequest(with:)
         executeGetRequest(with: urlString) { (data) in  // Data received from closure
@@ -200,6 +203,8 @@ class HTTPRequestHandler {
         }
     }
     
+       
+    
     //  Function to get a random recipe information - Calls executeGetRequest(with urlString:) and receives data from the closure.
     func getRandomRecipe(completion: @escaping (RecipeInformation) -> ()) {
         
@@ -213,7 +218,7 @@ class HTTPRequestHandler {
                 let decoder = JSONDecoder()
                 guard let results = try? decoder.decode(RecipeInformation.self, from: data!) else {
                     print("no results")
-                    return
+                    return 
                 }
                 
                 let recipeInfo: RecipeInformation = results

@@ -12,6 +12,7 @@ class SearchRecipeViewController: UIViewController {
     
     let httpHandler = HTTPRequestHandler() // httpHandler object for network requests
     var recipeList: [Recipe] = [] // List of recipes. Will append recipes once results are downloaded
+    var recipeInfoList: RecipeInformation! // store the selected recipe
     @IBOutlet weak var recipeTableview: UITableView!
     @IBOutlet weak var searchBarTextField: UITextField! // searchbar textfield
     @IBOutlet weak var searchButton: UIButton!
@@ -90,10 +91,26 @@ extension SearchRecipeViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedRecipe = recipeList[indexPath.row]
+       /* let selectedRecipe = recipeList[indexPath.row]
         httpHandler.getRecipeInformation(recipeID: selectedRecipe.id!.description) { (recipeInfo: RecipeInformation) in
             print(recipeInfo)
+            self.recipeInfoList = recipeInfo/
+        
+        }*/
+    }
+    
+    // send recipe information to Recipe Detail View Controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "recipeDetailsSegue" {
+            let cell = sender as! UITableViewCell
+            if let indexPath = recipeTableview.indexPath(for: cell) {
+                let selectedRecipe = recipeList[indexPath.row]
+                let detailViewController = segue.destination as! RecipeDetailViewController
+                detailViewController.currentRecipe = selectedRecipe
+            }
         }
+            
+            
     }
     
     
