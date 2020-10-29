@@ -8,7 +8,7 @@
 import Foundation
 
 struct APICALLS {
-    static let APIKey = "8e957ef6b28846729096cd0295372563" // Your API KEY
+    static let APIKey = "34b808261c6f4cf1b9e4c2e786bd49a5" // Your API KEY
 }
 
 // Recipe object

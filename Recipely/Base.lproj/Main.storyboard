@@ -197,17 +197,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qll-kA-GVn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sYd-7y-qWW">
-                                <rect key="frame" x="13" y="200" width="384" height="49.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sYd-7y-qWW">
+                                <rect key="frame" x="13" y="170" width="384" height="81.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="IOa-85-OaR">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="vch-Ts-h7W">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHf-8f-ujI">
-                                                <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="myc-se-rNw"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="zHf-8f-ujI">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -268,6 +265,20 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="ifu-hZ-78P">
+                                        <rect key="frame" x="0.0" y="54.5" width="384" height="27"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YI-PE-suj">
+                                                <rect key="frame" x="360" y="0.0" width="24" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="heart-outline"/>
+                                                <connections>
+                                                    <action selector="setFavorite:" destination="e7N-PU-ot2" eventType="touchUpInside" id="3Ih-uh-Ff3"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -416,7 +427,7 @@
                             <constraint firstItem="TDL-FV-f1T" firstAttribute="trailing" secondItem="sYd-7y-qWW" secondAttribute="trailing" constant="17" id="P6b-ZS-bJI"/>
                             <constraint firstItem="Qll-kA-GVn" firstAttribute="height" secondItem="dkX-kJ-kvZ" secondAttribute="height" multiplier="0.262277" constant="45" id="RQa-Vp-U7F"/>
                             <constraint firstItem="Qll-kA-GVn" firstAttribute="trailing" secondItem="TDL-FV-f1T" secondAttribute="trailing" id="SfT-eo-3bT"/>
-                            <constraint firstItem="sYd-7y-qWW" firstAttribute="top" secondItem="Qll-kA-GVn" secondAttribute="bottom" constant="-80" id="Zkh-36-LAH"/>
+                            <constraint firstItem="sYd-7y-qWW" firstAttribute="top" secondItem="Qll-kA-GVn" secondAttribute="bottom" constant="-110" id="Vx6-8G-TkN"/>
                             <constraint firstItem="Qll-kA-GVn" firstAttribute="leading" secondItem="TDL-FV-f1T" secondAttribute="leading" id="hde-oT-Mpm"/>
                             <constraint firstItem="TDL-FV-f1T" firstAttribute="trailing" secondItem="qnd-on-kGE" secondAttribute="trailing" constant="20" id="jd4-b2-Lek"/>
                             <constraint firstItem="TDL-FV-f1T" firstAttribute="trailing" secondItem="dWU-lv-ywE" secondAttribute="trailing" constant="20" id="nXH-V3-JD7"/>
@@ -428,6 +439,7 @@
                     <navigationItem key="navigationItem" title="Recipe Details" id="8Lh-Wk-No0"/>
                     <connections>
                         <outlet property="cookTimeLabel" destination="NHr-QL-eGV" id="4o3-Zq-C7W"/>
+                        <outlet property="favoriteButton" destination="6YI-PE-suj" id="49o-mZ-I7B"/>
                         <outlet property="ingredientsLabel" destination="bsk-wK-E7f" id="jCu-dD-s4Q"/>
                         <outlet property="ingredientsTableView" destination="Mwq-7D-Ea7" id="96Q-dx-S0m"/>
                         <outlet property="instructionHeadLabel" destination="bbi-YA-SEV" id="YfW-56-5WS"/>
@@ -463,6 +475,7 @@
     </scenes>
     <resources>
         <image name="chart.pie" catalog="system" width="128" height="121"/>
+        <image name="heart-outline" width="24" height="24"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
         <image name="timer" catalog="system" width="128" height="121"/>

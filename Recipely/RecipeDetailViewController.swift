@@ -20,6 +20,8 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var instructionHeadLabel: UILabel!
+
+    @IBOutlet weak var favoriteButton: UIButton!
     
     let httpHandler = HTTPRequestHandler() // httpHandler object for network requests
     
@@ -28,6 +30,9 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     var extendedIngredients : [ExtendedIngredient]?
     var ingredients:[Ingredient]?
     var stepsBreakDown = [String]()
+    
+    var favorited:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,7 +52,24 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     }
     
   
+    @IBAction func setFavorite(_ sender: Any) {
+        let toBeFavorited = !favorited
+        if (toBeFavorited) {
+            self.setFavoritedImage(true)
+                  
+        } else {
+            self.setFavoritedImage(false)
+        }
+    }
     
+    func setFavoritedImage(_ isFavorited: Bool) {
+        favorited = isFavorited
+        if (favorited) {
+            favoriteButton.setImage(UIImage(named: "heart-red" ), for:  UIControl.State.normal)
+        } else {
+            favoriteButton.setImage(UIImage(named: "heart-outline" ), for:  UIControl.State.normal)
+        }
+    }
     func setOutlets() {
        
         httpHandler.getRecipeInformation(recipeID: currentRecipe.id!.description) { (recipeInfo: RecipeInformation) in
@@ -57,8 +79,9 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 self.cookTimeLabel.text = String(recipeInfo.readyInMinutes ?? 0) + " min"
                 self.servingsLabel.text = String(recipeInfo.servings ?? 0) + " servings"
                 self.scoreLabel.text = (recipeInfo.healthScore?.description ?? "--" ) + " health score"
-                self.extendedIngredients = recipeInfo.extendedIngredients!
-                
+                if recipeInfo.extendedIngredients != nil {
+                    self.extendedIngredients = recipeInfo.extendedIngredients
+                }
                 let steps = recipeInfo.instructions
                
                 if steps != nil {
