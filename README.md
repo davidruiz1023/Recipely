@@ -9,25 +9,6 @@ Kevin Guzman			004219623			keguzman@csumb.edu
 Mariana Duarte			003067297			mduarte@csumb.edu
 Mireya Leon				002954041			mleon@csumb.edu
 
-
-App Name: Recipe
-
-User Stories
-
-1. User can SignIn / LogOut
-2. User can search recipes by ingredients
-3. User can see their history of searched recipes
-4. User can click recipe and see info about it
-5. Add Meal Plan Functionality
-5. User can add ingredients to a shopping list from a recipe. Items can be checked off (swipe to delete)
-
-
-Wireframe
-Recipely Board
-
-Interactive Prototype
-Recipely App 
-
 Original App Design Project - README Template
 ===
 
@@ -63,7 +44,7 @@ Original App Design Project - README Template
 * 2. User can search recipes by ingredients
 * 3. User can see their history of searched recipes
 * 4. User can click recipe and see info about it
-* 5. User can add ingredients to a shopping list from a recipe. Items can be swiped to delete
+* 5. User can add ingredients to a shopping list from a recipe. Items can be checked off (swipe to delete)
 * ...
 
 **Optional Nice-to-have Stories**
@@ -102,8 +83,10 @@ Original App Design Project - README Template
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+https://miro.com/app/board/o9J_kh1a5c4=/
 
 ### [BONUS] Interactive Prototype
+https://marvelapp.com/prototype/5ff7j92/screen/73854579
 
 ## Schema 
 [This section will be completed in Unit 9]
