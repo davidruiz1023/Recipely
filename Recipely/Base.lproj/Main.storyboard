@@ -115,12 +115,6 @@
                                 <action selector="logoutButtonPressed:" destination="BYZ-38-t0r" id="2ZE-vJ-UoU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="EP4-rk-sdF">
-                            <connections>
-                                <action selector="historyButtonPressed:" destination="BYZ-38-t0r" id="62K-mb-8yL"/>
-                                <segue destination="nab-l5-sEB" kind="show" id="HgF-2b-e6F"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="recipeTableview" destination="XR9-9e-U7C" id="QVw-QC-YiS"/>
@@ -130,23 +124,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1960.8695652173915" y="124.55357142857142"/>
+            <point key="canvasLocation" x="1835" y="125"/>
         </scene>
         <!--Shopping List-->
         <scene sceneID="Bjo-bK-gzn">
             <objects>
-                <viewController id="dWm-z5-3Qt" sceneMemberID="viewController">
+                <viewController id="dWm-z5-3Qt" customClass="ShoppingListViewController" customModule="Recipely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wnG-mu-fkV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Q6B-Ns-AP5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shopping List" id="0jW-0C-boF"/>
+                    <tabBarItem key="tabBarItem" title="Shopping List" image="cart.fill" catalog="system" id="0jW-0C-boF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZP9-l8-JkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912" y="917"/>
+            <point key="canvasLocation" x="141" y="845"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tmH-r2-ICb">
@@ -191,18 +185,19 @@
         <!--Favorites-->
         <scene sceneID="0Me-8n-2IP">
             <objects>
-                <viewController id="nab-l5-sEB" sceneMemberID="viewController">
+                <viewController id="nab-l5-sEB" customClass="FavoritesViewController" customModule="Recipely" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bAI-Xy-fB7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="L63-AX-0vd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="qwO-12-ya6"/>
                     <navigationItem key="navigationItem" title="Favorites" id="bES-2a-fNh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U97-3G-g3m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2973.913043478261" y="-174.10714285714286"/>
+            <point key="canvasLocation" x="141" y="-561"/>
         </scene>
         <!--Recipe Details-->
         <scene sceneID="5Hr-oM-Fqc">
@@ -470,13 +465,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZ8-Oh-wAO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2968.115942028986" y="504.24107142857139"/>
+            <point key="canvasLocation" x="2671" y="125"/>
         </scene>
         <!--Search-->
         <scene sceneID="8gc-cl-KMz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="tP6-Rf-dX8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" selectedImage="magnifyingglass" catalog="system" id="S3k-R0-1J1"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="S3k-R0-1J1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N7U-Oy-Ell">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -489,7 +484,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iV8-Nf-TDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="124.55357142857142"/>
+            <point key="canvasLocation" x="1007" y="125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eNm-XN-3RJ">
@@ -497,11 +492,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="PUs-a2-wno" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PcM-UM-3wX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="tP6-Rf-dX8" kind="relationship" relationship="viewControllers" id="Wvu-8y-LG6"/>
+                        <segue destination="nab-l5-sEB" kind="relationship" relationship="viewControllers" id="pkK-DO-SxA"/>
                         <segue destination="dWm-z5-3Qt" kind="relationship" relationship="viewControllers" id="jca-w3-xIi"/>
                     </connections>
                 </tabBarController>
@@ -511,8 +508,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="chart.pie" catalog="system" width="128" height="121"/>
         <image name="heart-outline" width="24" height="24"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
