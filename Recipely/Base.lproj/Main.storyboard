@@ -395,15 +395,15 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instructionCell" rowHeight="49" id="hwC-Ru-WdO" customClass="InstructionTableViewCell" customModule="Recipely" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="49" width="374" height="49"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instructionCell" rowHeight="36" id="hwC-Ru-WdO" customClass="InstructionTableViewCell" customModule="Recipely" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="49" width="374" height="36"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hwC-Ru-WdO" id="3YT-lV-bmP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="49"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="steps" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvr-Cy-4Bt">
-                                                            <rect key="frame" x="20" y="11" width="334" height="27"/>
+                                                            <rect key="frame" x="20" y="11" width="334" height="14"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
