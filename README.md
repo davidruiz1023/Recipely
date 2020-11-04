@@ -83,6 +83,15 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
 [This section will be completed in Unit 9]
 ### Models
 [Add table of models]
+#### User
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | userId        | String   | unique id for the user |
+   | username      | Pointer to User| user's selected username |
+   | password      | String | a user's password |
+   | favorites     | Array | array of recipe ids that the user has favorited |
+
 ### Networking
 - [Create basic snippets for each Parse network request] - STILL NEED TODO
 
