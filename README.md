@@ -1,11 +1,12 @@
 Group: Recipely
-Group Members				Student Number               	Contact
-
-David Ruiz				004015588		            daruiz@csumb.edu
-Kevin Guzman			004219623			keguzman@csumb.edu
-Mariana Duarte			003067297			mduarte@csumb.edu
-Mireya Leon				002954041			mleon@csumb.edu
-
+| Group Members	| Student Number| Contact |
+| ------------- | --------- | ------------|
+| David Ruiz	  | 004015588 | daruiz@csumb.edu |
+| Kevin Guzman	| 004219623 | keguzman@csumb.edu |
+| Mariana Duarte| 003067297 | mduarte@csumb.edu |
+| Mireya Leon	  | 002954041 | mleon@csumb.edu |
+ 
+			               	
 Original App Design Project - README Template
 ===
 
@@ -105,8 +106,7 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | https://api.spoonacular.com/recipes/findByIngredients  | GET request to Spoonacular API to search for recipes by ingredients 
-    `GET`    |  https://api.spoonacular.com/recipes/{id}/information | GET request to Spoonacular API to get recipe details (Recipe Details Screen)
-    `POST`    | https://api.spoonacular.com/mealplanner/{username}/shopping-list/items
- | POST request to Spoonacular API to create a shopping list with ingredients (Recipe Details Screen) 
+    `GET`   | https://api.spoonacular.com/recipes/findByIngredients  | GET request to Spoonacular API to search for recipes by ingredients 
+    `GET`   |  https://api.spoonacular.com/recipes/{id}/information | GET request to Spoonacular API to get recipe details (Recipe Details Screen)
+    `POST`  | https://api.spoonacular.com/mealplanner/{username}/shopping-list/items| POST request to Spoonacular API to create a shopping list with ingredients (Recipe Details Screen) 
    
