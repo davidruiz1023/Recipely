@@ -91,6 +91,7 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
    | username      | Pointer to User| user's selected username |
    | password      | String | a user's password |
    | favorites     | Array | array of recipe ids that the user has favorited |
+   | shoppingList  | Array | array of ingredient name and their respective count pairs
 
 ### Networking
 - [Create basic snippets for each Parse network request] - STILL NEED TODO
