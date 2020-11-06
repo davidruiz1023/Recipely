@@ -100,6 +100,43 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
    |let usedIngredientCount | Integer | count of used ingredients
    | let usedIngredients | Array | Array of used ingredients objects
    
+   
+ #### Recipe Information
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | id            | Int   | spoonacular id for the recipe |
+   | title | String | title of the recipe
+   | dairyFree |  Bool | whether this recipe is dairy free or not
+   | diets | Array | Array of strings describing diets that this recipe falls under
+   |  dishTypes | Array | Array of strings listing dish types
+   |  extendedIngredients | Array | Array of ExtendedIngredients
+   |  gaps | String | String stating whether recipe information has gaps
+   | glutenFree | Bool | whether this recipe is gluten free or not
+   | healthScore | Double | double rating how healthy this recipe is
+   | image | String | string of image url for this recipe
+   | imageType | String | format of the image
+   | instructions | String | string containing the instructions for this recipe
+   | ketogenic | Bool | whether this recipe is ketogenic or not
+   | license | String | liscense of this recipe
+   | lowFodmap | Bool | whether recipe is low fodmap
+   | pricePerServing | Double | price per serving of this recipe
+   | readyInMinutes | Int | total minutes to finish recipe
+   | servings | Int | number of servings this recipe makes
+   | sourceName | String | source name of this recipe
+   | sourceUrl | String | source url of this recipe
+   | spoonacularScore | Double | rating for this recipe on spoonacular
+   | spoonacularSourceUrl | String | source url of this recipe
+   | summary | String | short description of recipe
+   | sustainable | Bool | whether this recipe is sustainable or not
+   | vegan | Bool | whether recipe is vegan or not
+   | vegetarian | Bool | whether recipe is vegetarian or not
+   | veryHealthy | Bool | whether this recipe is healthy or not
+   | veryPopular | Bool | whether this recipe is popular or not
+   | weightWatcherSmartPoints | Integer | amount of weight watcher points for this recipe
+   | whole30 | Bool | whether the recipe is whole30 approved
+   | winePairing | WinePairing | winepairing object for this recipe
+   
  #### Ingredient 
 
    | Property      | Type     | Description |
@@ -108,6 +145,9 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
    | name         | String| name of ingredient |
    | original      | String | original count and ingredient text from recipe |
    | originalName     | String | original text for ingredient name |
+   | unit | String  | unit of measurement for this ingredient
+   | unitLong | String | full unit of measurement for this ingredient
+   | unitShort | String | abbreviated unit of measurement for this ingredient
   
    
 #### User
