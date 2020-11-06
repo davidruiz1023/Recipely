@@ -81,7 +81,7 @@ https://miro.com/app/board/o9J_kh1a5c4=/
 https://marvelapp.com/prototype/5ff7j92/screen/73854579 
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
 
 #### Recipe
