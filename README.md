@@ -250,5 +250,14 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
    ----------|----------|------------
     `GET`   | https://api.spoonacular.com/recipes/findByIngredients  | GET request to Spoonacular API to search for recipes by ingredients 
     `GET`   |  https://api.spoonacular.com/recipes/{id}/information | GET request to Spoonacular API to get recipe details (Recipe Details Screen)
-    `POST`  | https://api.spoonacular.com/mealplanner/{username}/shopping-list/items| POST request to Spoonacular API to create a shopping list with ingredients (Recipe Details Screen) 
-   
+    `POST`  | https://api.spoonacular.com/mealplanner/{username}/shopping-list/items| POST request to Spoonacular API to create a shopping list with ingredients (Recipe Details Screen)
+    
+#### Parse API
+- Base URL - https://parseapi.back4app.com
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `POST`   | https://parseapi.back4app.com/users  | POST request to Parse API to sign up a new user for the app (Login Screen)
+    `GET`   |  https://parseapi.back4app.com/login | GET request to Parse API to log in into a user account (Login Screen)
+    `POST`  | https://parseapi.back4app.com/classes/MyCustomClassName | POST request to Parse API to to create a new object (Recipe Details Screen)
+    `GET`  | https://parseapi.back4app.com/classes/MyCustomClassName | GET request to Parse API to to retrieve an object (Faovrites and Shopping List Screen)
