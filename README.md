@@ -84,6 +84,32 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
 [This section will be completed in Unit 9]
 ### Models
 [Add table of models]
+
+#### Recipe
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | id            | Int   | spoonacular id for the recipe |
+   | title         | String| title of the recipe |
+   | image      | String | image name |
+   | imageType     | String | type of image |
+   | likes  | Integer | number of likes for this recipe
+   | missedIngredientCount | Integer | number of missed ingredients
+   | let missedIngredients | Array | Array of ingredient objects missed
+   |   let unusedIngredients | Array | Arrays of unused ingredient objects
+   |let usedIngredientCount | Integer | count of used ingredients
+   | let usedIngredients | Array | Array of used ingredients objects
+   
+ #### Ingredient 
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | id            | Integer   | spoonacular id for the ingredient |
+   | name         | String| name of ingredient |
+   | original      | String | original count and ingredient text from recipe |
+   | originalName     | String | original text for ingredient name |
+  
+   
 #### User
 
    | Property      | Type     | Description |
