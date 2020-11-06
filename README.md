@@ -94,10 +94,10 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
    | imageType     | String | type of image |
    | likes  | Integer | number of likes for this recipe
    | missedIngredientCount | Integer | number of missed ingredients
-   | let missedIngredients | Array | Array of ingredient objects missed
-   |   let unusedIngredients | Array | Arrays of unused ingredient objects
-   |let usedIngredientCount | Integer | count of used ingredients
-   | let usedIngredients | Array | Array of used ingredients objects
+   | missedIngredients | Array | Array of ingredient objects missed
+   | unusedIngredients | Array | Arrays of unused ingredient objects
+   | usedIngredientCount | Integer | count of used ingredients
+   | usedIngredients | Array | Array of used ingredients objects
    
    
  #### Recipe Information
