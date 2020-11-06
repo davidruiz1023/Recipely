@@ -83,7 +83,6 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
 
 #### Recipe
 
@@ -137,6 +136,20 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
    | whole30 | Bool | whether the recipe is whole30 approved
    | winePairing | WinePairing | winepairing object for this recipe
    
+ #### AnalyzedInstruction 
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | steps            | Array   | array of steps |
+ 
+  #### Step 
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | number            | Integer   | number of step |
+   | step            | String   | step instruction |
+
+   
  #### Ingredient 
 
    | Property      | Type     | Description |
@@ -148,7 +161,70 @@ https://marvelapp.com/prototype/5ff7j92/screen/73854579
    | unit | String  | unit of measurement for this ingredient
    | unitLong | String | full unit of measurement for this ingredient
    | unitShort | String | abbreviated unit of measurement for this ingredient
-  
+   
+    
+ #### ExtendedIngredient 
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | id            | Integer   | id for this ingredient |
+   | name            | String   | name of this ingredient |
+   | aisle            | String   | category of aisles where this ingredient can be found |
+   | amount            | Double   | amount of ingredient needed for recipe |
+   | consitency            | String   | consistency of ingredient |
+   | image            | String   | image url for this ingredient |
+   | measures         | Measure   | measure struct with metric information |
+   | meta         | Array   | array of strings of meta information |
+   | original | String | original text for this ingredient in recipe
+   | originalName | String | name of the ingredient
+   | unit | String | unit of measurement for this ingredient
+
+#### Measure 
+
+ | Property      | Type     | Description |
+ | ------------- | -------- | ------------|
+ | metric            | Metric   | struct containing metric units |
+ | us            | Me   | struct containing us measure units |
+ 
+#### Metric
+
+ | Property      | Type     | Description |
+ | ------------- | -------- | ------------|
+ | amount      | Double   | amount for this metric measurement |
+ | unitLong    | String   | unit name for metric measurement |
+ | unitShort   | String   | abrreviated name for metric measurement |
+
+ 
+#### Me 
+
+ | Property      | Type     | Description |
+ | ------------- | -------- | ------------|
+ | amount      | Double   | amount for this us measurement |
+ | unitLong    | String   | unit name for us measurement |
+ | unitShort   | String   | abrreviated name for us measurement |  
+ 
+ 
+ #### WinePairing 
+
+ | Property      | Type     | Description |
+ | ------------- | -------- | ------------|
+ | pairedWines      | Array   | array of strings of wine names|
+ | pairingText    | String   | string describing how these wines pair with this recipe|
+ | productMatches   | Array   |  array of pairec wines and information |  
+ 
+ #### ProductMatch 
+
+ | Property      | Type     | Description |
+ | ------------- | -------- | ------------|
+ | id      | Integer   | id for this product match |
+ | title   | String   | name for product |  
+ | averageRating    | Double   | average rating for this product|
+ | descriptionField   | String   | short description of this product |  
+ | imageUrl      | String   | image url of this product |
+ | link      | String   | link of where o buy this product |
+ | price    | String   | product price |
+ | score   | Float   | score for product |  
+
    
 #### User
 
