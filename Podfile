@@ -7,5 +7,6 @@ target 'Recipely' do
 
   # Pods for Recipely
   pod "AlamofireImage"
+  pod 'Parse'
 
 end
