@@ -39,7 +39,7 @@ Users can search recipes by ingredients and store them as favorites. A user can 
 
 - [ ] 1. User can SignIn / LogOut
 - [x] 2. User can search recipes by ingredients
-- [ ] 3. User can see their history of searched recipes
+- [ ] 3. User can view their favorited recipes
 - [x] 4. User can click recipe and see info about it
 - [ ] 5. User can add ingredients to a shopping list from a recipe
 
