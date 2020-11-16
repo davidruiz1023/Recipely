@@ -22,7 +22,7 @@ class DesignView : UIView {
     
     @IBInspectable var shadowOpacity: CGFloat = 0 {
            didSet {
-               layer.shadowOpacity = Float(shadowOpacit)
+               layer.shadowOpacity = Float(shadowOpacity)
            }
     }
     
