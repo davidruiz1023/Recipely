@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import Parse
 
 class SearchRecipeViewController: UIViewController {
     
@@ -16,6 +17,20 @@ class SearchRecipeViewController: UIViewController {
     @IBOutlet weak var recipeTableview: UITableView!
     @IBOutlet weak var searchBarTextField: UITextField! // searchbar textfield
     @IBOutlet weak var searchButton: UIButton!
+    
+    @IBAction func onLogoutButton(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        
+        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+        
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+            
+        delegate.window?.rootViewController = loginViewController
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +114,7 @@ extension SearchRecipeViewController: UITableViewDelegate, UITableViewDataSource
         }*/
     }
     
+    
     // send recipe information to Recipe Detail View Controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "recipeDetailsSegue" {
@@ -112,6 +128,8 @@ extension SearchRecipeViewController: UITableViewDelegate, UITableViewDataSource
             
             
     }
+    
+    
     
     
 }
