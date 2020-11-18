@@ -23,7 +23,6 @@ class SearchRecipeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    
     // Function called when search button is pressed
     @IBAction func searchButtonPressed(_ sender: Any) {
         // If searchbar is not empty, perform network request using keywords in searchbar
