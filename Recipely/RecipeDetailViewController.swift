@@ -148,11 +148,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     */
     
 
- }
-    
-  
-    
-    
+ }    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
              

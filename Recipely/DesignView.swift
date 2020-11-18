@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 @IBDesignable
 class DesignView : UIView {
     @IBInspectable var shadowColor: UIColor = UIColor.clear {

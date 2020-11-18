@@ -18,20 +18,6 @@ class SearchRecipeViewController: UIViewController {
     @IBOutlet weak var searchBarTextField: UITextField! // searchbar textfield
     @IBOutlet weak var searchButton: UIButton!
     
-    @IBAction func onLogoutButton(_ sender: Any) {
-        PFUser.logOut()
-        
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        
-        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
-        
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-            
-        delegate.window?.rootViewController = loginViewController
-        
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -74,11 +60,8 @@ class SearchRecipeViewController: UIViewController {
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
+        PFUser.logOut()
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func historyButtonPressed(_ sender: Any) {
-        
     }
     
 }
