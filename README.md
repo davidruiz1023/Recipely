@@ -37,12 +37,22 @@ Users can search recipes by ingredients and store them as favorites. A user can 
 
 **Required Must-have Stories**
 
-* 1. User can SignIn / LogOut
-* 2. User can search recipes by ingredients
-* 3. User can see their history of searched recipes
-* 4. User can click recipe and see info about it
-* 5. User can add ingredients to a shopping list from a recipe
+- [ ] 1. User can SignIn / LogOut
+- [x] 2. User can search recipes by ingredients
+- [ ] 3. User can view their favorited recipes
+- [x] 4. User can click recipe and see info about it
+- [ ] 5. User can add ingredients to a shopping list from a recipe
 
+## Video Walkthrough
+
+A walkthrough of implemented user stories:<br>
+- [ ] 1. User can SignIn / LogOut<br>
+- [x] 2. User can search recipes by ingredients<br>
+<img src='https://i.imgur.com/9ird32b.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><br>
+- [ ] 3. User can view their favorited recipes<br>
+- [x] 4. User can click recipe and see info about it<br>
+<img src='https://i.imgur.com/ez3Ugwg.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><br>
+- [ ] 5. User can add ingredients to a shopping list from a recipe<br>
 ### 2. Screen Archetypes
 
 * Login
