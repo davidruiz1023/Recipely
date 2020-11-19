@@ -28,7 +28,11 @@ class LoginViewController: UIViewController {
           if user != nil {
             self.performSegue(withIdentifier: "loginSegue", sender: nil)
           } else {
-            print("Error\(error)")
+            let error = error as! NSError
+            print("Error Domain: \(error.domain)")
+            print("Error Response Code: \(error.code)")
+            print("Error Description: \(error.localizedDescription)")
+            print("Error User Info: \(error.userInfo)")
           }
         }
         
@@ -43,7 +47,11 @@ class LoginViewController: UIViewController {
             if success {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                print("Error: \(error?.localizedDescription)")
+                let error = error as! NSError
+                print("Error Domain: \(error.domain)")
+                print("Error Response Code: \(error.code)")
+                print("Error Description: \(error.localizedDescription)")
+                print("Error User Info: \(error.userInfo)")
             }
         }
     

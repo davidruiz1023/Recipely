@@ -60,7 +60,15 @@ class SearchRecipeViewController: UIViewController {
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         PFUser.logOut()
-        self.dismiss(animated: true, completion: nil)
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+        
+        let delegate = (UIApplication.shared.connectedScenes.first?.delegate)! as! SceneDelegate
+        
+        delegate.window?.rootViewController = loginViewController
+        
+        //self.dismiss(animated: true, completion: nil)
     }
     
 }

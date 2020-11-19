@@ -257,7 +257,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="Login:" destination="P4F-47-Q8b" eventType="touchUpInside" id="QtU-pW-9Hv"/>
-                                                    <segue destination="PUs-a2-wno" kind="presentation" identifier="loginSegue" id="K0N-9p-V9D"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -312,6 +311,7 @@
                     <connections>
                         <outlet property="passwordField" destination="ZsZ-pg-pXs" id="bIa-PV-3me"/>
                         <outlet property="usernameField" destination="oom-0E-nPa" id="REg-T1-aXr"/>
+                        <segue destination="PUs-a2-wno" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="tS3-6a-xUS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvR-yb-X5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -627,6 +627,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="MainTabController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="PUs-a2-wno" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="beq-BD-lbt"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PcM-UM-3wX">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>

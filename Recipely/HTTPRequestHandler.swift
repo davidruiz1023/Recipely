@@ -150,9 +150,12 @@ class HTTPRequestHandler {
             //  Log errors (if any)
             if error != nil {
                 print(error.debugDescription)
+                
             } else {
                 //  Passing the data from closure to the calling method
                 //print("JSON String: \(String(describing: String(data: data!, encoding: .utf8)))") // Print RAW JSON string from downloaded data
+                let response = response as! HTTPURLResponse
+                print("Status Code: \(response.statusCode)")
                 completion(data)
             }
         }.resume()  // Starting the dataTask
