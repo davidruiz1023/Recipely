@@ -46,7 +46,8 @@ Users can search recipes by ingredients and store them as favorites. A user can 
 ## Video Walkthrough
 
 A walkthrough of implemented user stories:<br>
-- [ ] 1. User can SignIn / LogOut<br>
+- [x] 1. User can SignIn / LogOut<br>
+<img src='https://i.imgur.com/DTs9kO6.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><br>
 - [x] 2. User can search recipes by ingredients<br>
 <img src='https://i.imgur.com/9ird32b.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><br>
 - [ ] 3. User can view their favorited recipes<br>
