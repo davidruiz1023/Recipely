@@ -37,7 +37,7 @@ Users can search recipes by ingredients and store them as favorites. A user can 
 
 **Required Must-have Stories**
 
-- [ ] 1. User can SignIn / LogOut
+- [x] 1. User can SignIn / LogOut
 - [x] 2. User can search recipes by ingredients
 - [ ] 3. User can view their favorited recipes
 - [x] 4. User can click recipe and see info about it
