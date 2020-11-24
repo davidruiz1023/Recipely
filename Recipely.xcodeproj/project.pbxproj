@@ -22,6 +22,7 @@
 		6A4C2FF025431A39006EF9FD /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C2FEF25431A39006EF9FD /* RecipeDetailViewController.swift */; };
 		6A4C2FF22544DF72006EF9FD /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C2FF12544DF72006EF9FD /* IngredientTableViewCell.swift */; };
 		6A4C2FF425450A3E006EF9FD /* InstructionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C2FF325450A3D006EF9FD /* InstructionTableViewCell.swift */; };
+		6ABD6A25256C2FCD00E1E69E /* ShoppingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABD6A24256C2FCD00E1E69E /* ShoppingItemTableViewCell.swift */; };
 		8C227DB3C6A6633CF2918324 /* Pods_Recipely.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB03E1CF7F26A2DFC6C0EE17 /* Pods_Recipely.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		6A4C2FEF25431A39006EF9FD /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		6A4C2FF12544DF72006EF9FD /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		6A4C2FF325450A3D006EF9FD /* InstructionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTableViewCell.swift; sourceTree = "<group>"; };
+		6ABD6A24256C2FCD00E1E69E /* ShoppingItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemTableViewCell.swift; sourceTree = "<group>"; };
 		AC4A662E2D8AD56E14BE39CB /* Pods-Recipely.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipely.debug.xcconfig"; path = "Target Support Files/Pods-Recipely/Pods-Recipely.debug.xcconfig"; sourceTree = "<group>"; };
 		CB03E1CF7F26A2DFC6C0EE17 /* Pods_Recipely.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipely.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D0AE631A6E3772C426B7B9 /* Pods-Recipely.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipely.release.xcconfig"; path = "Target Support Files/Pods-Recipely/Pods-Recipely.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				636A610825426E0B00F34FC3 /* RecipeTableViewCell.swift */,
 				6A4C2FF12544DF72006EF9FD /* IngredientTableViewCell.swift */,
 				6A4C2FF325450A3D006EF9FD /* InstructionTableViewCell.swift */,
+				6ABD6A24256C2FCD00E1E69E /* ShoppingItemTableViewCell.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ABD6A25256C2FCD00E1E69E /* ShoppingItemTableViewCell.swift in Sources */,
 				635E419D253FB5C4005DEE7C /* SearchRecipeViewController.swift in Sources */,
 				63F060F1254C7C310004FA19 /* FavoritesViewController.swift in Sources */,
 				63F060F7254C7CDC0004FA19 /* ShoppingListViewController.swift in Sources */,
