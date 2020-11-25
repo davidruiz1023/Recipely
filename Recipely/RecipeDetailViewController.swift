@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Parse
+
 class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
 
@@ -22,6 +24,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var instructionHeadLabel: UILabel!
 
     @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var addToShopListButton: UIBarButtonItem!
     
     let httpHandler = HTTPRequestHandler() // httpHandler object for network requests
     
@@ -43,6 +46,10 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         instructionsTableview.dataSource = self
         instructionsTableview.delegate = self
+        
+        self.instructionsTableview.tableFooterView = UIView()
+        self.ingredientsTableView.tableFooterView = UIView()
+        
         if (self.recipeInfo == nil) {
             self.instructionHeadLabel.text = "No instructions available at this moment."
         }
@@ -70,6 +77,98 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
             favoriteButton.setImage(UIImage(named: "heart-outline" ), for:  UIControl.State.normal)
         }
     }
+    
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+
+    
+    @IBAction func addIngredients(_ sender: Any) {
+        print("cliecked shopp")
+        let user = PFUser.current()
+        do {
+            var newIngredients:[[String:Any]] = []
+            if extendedIngredients != nil {
+                for item in extendedIngredients! {
+                    var encoded = try JSONEncoder().encode(item)
+                    //print(String(bytes: encoded, encoding: .utf8))
+                    var dict = convertToDictionary(text: String(bytes: encoded, encoding: .utf8) ?? "")
+                    //print(dict)
+                    newIngredients.append(dict!)
+                }
+            }
+            var items = [[String:Any]]()
+            var updatedItems = [[String:Any]]()
+            if user?["shoppingList"]  != nil {
+                items = (user?["shoppingList"]) as! [[String:Any]]
+            }
+            //var shoppingList = user?["shoppingList"] ?? []
+            
+            
+           
+        
+            //var items = (user?["shoppingList"]) as! [[String:Any]]
+           
+            if items.isEmpty {
+                for i in newIngredients {
+                    updatedItems.append(i)
+                }
+            } else {
+                for i in newIngredients {
+                    if items.contains(where: {$0["name"] as! String == i["name"] as! String}) {
+                        for var item in items {
+                            if item["name"] as! String == i["name"] as! String {
+                                //print("dup")
+                                var val = (item["amount"] as! Double) + (i["amount"] as! Double)
+                                item["amount"]! = val
+                                //print(val)
+                                //var temp = item
+                                updatedItems.append(item)
+                            }
+                        }
+                    }
+                   
+                    else {
+                        updatedItems.append(i)
+                    }
+                    
+                }
+                
+                for currItem in items {
+                    if !updatedItems.contains(where: {$0["name"] as! String == currItem["name"] as! String}) {
+                        updatedItems.append(currItem)
+                    }
+                }
+            }
+            user?["shoppingList"] = updatedItems
+            
+           
+           
+            user?.saveInBackground {
+              (success: Bool, error: Error?) in
+              if (success) {
+                print("added items to list")
+              } else {
+                print(error?.localizedDescription as Any)
+              }
+            }
+        } catch {
+            print(error)
+        }
+       
+       
+        
+       
+        
+    }
+    
     func setOutlets() {
        
         httpHandler.getRecipeInformation(recipeID: currentRecipe.id!.description) { (recipeInfo: RecipeInformation) in
