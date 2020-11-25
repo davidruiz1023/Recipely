@@ -24,7 +24,7 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         shoppingListTableView.delegate = self
         shoppingListTableView.estimatedRowHeight = 44
         refreshControl.addTarget(self, action: #selector(loadShoppingList), for: .valueChanged)
-        //Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadShoppingList), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadShoppingList), userInfo: nil, repeats: true)
         self.shoppingListTableView.refreshControl = refreshControl
         self.shoppingListTableView.tableFooterView = UIView()
         //shoppingListTableView.rowHeight = UITableView.automaticDimension
@@ -42,17 +42,11 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
             
             
             for item in items {
-                print("From db: ")
-                print(item["name"])
+                //print("From db: ")
+                //print(item["name"])
                 if !shoppingList.contains(where: {$0["name"] as! String == item["name"] as! String}) {
                     shoppingList.append(item)
                 }
-            }
-            
-            for i in shoppingList {
-                print("From db: ")
-                print(i["name"])
-                //shoppingList?.append(item)
             }
         }
         // update table
