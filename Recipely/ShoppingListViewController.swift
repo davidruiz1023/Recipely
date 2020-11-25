@@ -69,13 +69,11 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         noDataLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
         if shoppingList.count > 0 {
            count = shoppingList.count
-           noDataLabel.isHidden = true
            tableView.backgroundView = nil
-            tableView.separatorStyle  = .singleLine
+           tableView.separatorStyle  = .singleLine
 
         }
         else if shoppingList.count == 0 {
-           
             noDataLabel.text          = "Your shopping list is empty!"
             noDataLabel.textColor     = UIColor.gray
             noDataLabel.textAlignment = .center
@@ -120,12 +118,25 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let ingredient = shoppingList[indexPath.row]
+        let user = PFUser.current()
+        //var userList = user?["shoppingList"]
+        
         if editingStyle == .delete {
             shoppingList.remove(at: indexPath.row)
             shoppingListTableView.deleteRows(at: [indexPath], with: .left)
-            
+            user?["shoppingList"] = shoppingList
+            user?.saveInBackground {
+              (success: Bool, error: Error?) in
+              if (success) {
+                print("removed " + (ingredient["name"] as! String))
+              } else {
+                print(error?.localizedDescription as Any)
+              }
+            }
         }
     }
+    
     
   
 
