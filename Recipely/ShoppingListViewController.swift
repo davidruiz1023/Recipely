@@ -13,9 +13,9 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
 
     @IBOutlet weak var shoppingListTableView: UITableView!
     
-    var shoppingList:[[String:Any]] = []
+    var shoppingList = [[String:Any]]()
     let refreshControl = UIRefreshControl()
-    
+    var noDataLabel: UILabel = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,10 +24,10 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         shoppingListTableView.delegate = self
         shoppingListTableView.estimatedRowHeight = 44
         refreshControl.addTarget(self, action: #selector(loadShoppingList), for: .valueChanged)
-        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadShoppingList), userInfo: nil, repeats: true)
+        //Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadShoppingList), userInfo: nil, repeats: true)
         self.shoppingListTableView.refreshControl = refreshControl
+        self.shoppingListTableView.tableFooterView = UIView()
         //shoppingListTableView.rowHeight = UITableView.automaticDimension
-        
         loadShoppingList()
     }
     
@@ -36,37 +36,55 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         let user = PFUser.current()
         
         //var shoppingList = user?["shoppingList"]
-        var items = (user?["shoppingList"]) as! Array<Dictionary<String, Any>>
-        
         shoppingList.removeAll()
-        for item in items {
-            print("From db: ")
-            print(item["name"])
-            //if !shoppingList.contains(where: {$0["name"] as! String == item["name"] as! String}) {
-                shoppingList.append(item)
-            //}
-        }
-        
-        for i in shoppingList {
-            print("From db: ")
-            print(i["name"])
-            //shoppingList?.append(item)
+        if user?["shoppingList"] != nil {
+            var items = (user?["shoppingList"]) as!  [[String:Any]]
+            
+            
+            for item in items {
+                print("From db: ")
+                print(item["name"])
+                if !shoppingList.contains(where: {$0["name"] as! String == item["name"] as! String}) {
+                    shoppingList.append(item)
+                }
+            }
+            
+            for i in shoppingList {
+                print("From db: ")
+                print(i["name"])
+                //shoppingList?.append(item)
+            }
         }
         // update table
         self.shoppingListTableView.reloadData()
+        
         // stop animating once new data loaded
         self.refreshControl.endRefreshing()
         
     }
     
-    // Implement the delay method
-    func run(after wait: TimeInterval, closure: @escaping () -> Void) {
-        let queue = DispatchQueue.main
-        queue.asyncAfter(deadline: DispatchTime.now() + wait, execute: closure)
-    }
-   
+  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shoppingList.count
+        var count: Int = 0
+        noDataLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        if shoppingList.count > 0 {
+           count = shoppingList.count
+           noDataLabel.isHidden = true
+           tableView.backgroundView = nil
+            tableView.separatorStyle  = .singleLine
+
+        }
+        else if shoppingList.count == 0 {
+           
+            noDataLabel.text          = "Your shopping list is empty!"
+            noDataLabel.textColor     = UIColor.gray
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView  = noDataLabel
+            tableView.separatorStyle  = .none
+            count = 0
+        }
+      
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,11 +92,11 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         
         let ingredient = shoppingList[indexPath.row]
         let size = 100
-        let basepath = "https://spoonacular.com/cdn/ingredients_\(size)/"
+        let basepath = "https://spoonacular.com/cdn/ingredients_\(size)" + "x" + "\(size)/"
         let ingredientImage = ingredient["image"] ?? nil
         if ingredientImage != nil {
-            let imageName = String(describing: ingredientImage)
-            let imageUrl = URL(string: basepath + imageName)
+           // let imageName = String(describing: ingredientImage)
+            let imageUrl = URL(string: basepath + (ingredientImage as! String))
             let data = try? Data(contentsOf: imageUrl!)
                 
             if let imageData = data {
@@ -101,6 +119,15 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            shoppingList.remove(at: indexPath.row)
+            shoppingListTableView.deleteRows(at: [indexPath], with: .left)
+            
+        }
+    }
+    
+  
 
     /*
     // MARK: - Navigation

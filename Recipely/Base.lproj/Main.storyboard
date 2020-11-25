@@ -146,17 +146,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MG6-Sv-dFO">
-                                                    <rect key="frame" x="317" y="26" width="15" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="15" id="cJQ-ra-gjz"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X.XX" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K43-u9-lYi">
-                                                    <rect key="frame" x="337" y="26" width="53" height="60"/>
+                                                    <rect key="frame" x="299" y="27" width="38" height="59"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -169,10 +160,25 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Toe-Ck-JU1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFY-ex-aOD">
-                                                    <rect key="frame" x="228" y="25" width="81" height="60"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="units" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ap6-ey-ElT">
+                                                    <rect key="frame" x="357" y="45" width="37" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MG6-Sv-dFO">
+                                                    <rect key="frame" x="264" y="27" width="15" height="60"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="81" id="YeZ-UJ-MeT"/>
+                                                        <constraint firstAttribute="width" constant="15" id="cJQ-ra-gjz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFY-ex-aOD">
+                                                    <rect key="frame" x="128" y="26" width="128" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="128" id="YeZ-UJ-MeT"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -180,19 +186,21 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MG6-Sv-dFO" firstAttribute="leading" secondItem="ZFY-ex-aOD" secondAttribute="trailing" constant="8" id="38U-VN-0gr"/>
+                                                <constraint firstItem="ZFY-ex-aOD" firstAttribute="leading" secondItem="FzC-4V-Rfb" secondAttribute="trailing" constant="8" id="71r-GK-CxW"/>
+                                                <constraint firstAttribute="trailing" secondItem="ap6-ey-ElT" secondAttribute="trailing" constant="20" id="COQ-Dh-gtf"/>
+                                                <constraint firstItem="K43-u9-lYi" firstAttribute="leading" secondItem="MG6-Sv-dFO" secondAttribute="trailing" constant="20" id="Ciz-2x-iie"/>
                                                 <constraint firstItem="FzC-4V-Rfb" firstAttribute="leading" secondItem="Bil-Mg-4yD" secondAttribute="leading" constant="20" symbolic="YES" id="K3m-bm-zqO"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZFY-ex-aOD" secondAttribute="bottom" constant="26" id="Lor-km-cEP"/>
-                                                <constraint firstAttribute="trailing" secondItem="K43-u9-lYi" secondAttribute="trailing" constant="24" id="MBR-CT-xxe"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZFY-ex-aOD" secondAttribute="bottom" constant="25" id="Lor-km-cEP"/>
+                                                <constraint firstAttribute="bottom" secondItem="ap6-ey-ElT" secondAttribute="bottom" constant="45" id="V9d-x9-aTK"/>
                                                 <constraint firstAttribute="bottom" secondItem="K43-u9-lYi" secondAttribute="bottom" constant="25" id="VtX-bx-yNp"/>
                                                 <constraint firstItem="FzC-4V-Rfb" firstAttribute="top" secondItem="Bil-Mg-4yD" secondAttribute="top" constant="11" id="Y8P-zT-irh"/>
                                                 <constraint firstAttribute="bottom" secondItem="FzC-4V-Rfb" secondAttribute="bottom" constant="11" id="bEp-97-ny3"/>
-                                                <constraint firstItem="ZFY-ex-aOD" firstAttribute="top" secondItem="Bil-Mg-4yD" secondAttribute="top" constant="25" id="gn1-YJ-1B7"/>
-                                                <constraint firstAttribute="bottom" secondItem="MG6-Sv-dFO" secondAttribute="bottom" constant="25" id="kIP-Ih-Plg"/>
-                                                <constraint firstItem="ZFY-ex-aOD" firstAttribute="leading" secondItem="FzC-4V-Rfb" secondAttribute="trailing" constant="108" id="vau-yn-GYd"/>
-                                                <constraint firstItem="MG6-Sv-dFO" firstAttribute="top" secondItem="Bil-Mg-4yD" secondAttribute="top" constant="26" id="y1a-eq-M5N"/>
-                                                <constraint firstItem="K43-u9-lYi" firstAttribute="leading" secondItem="MG6-Sv-dFO" secondAttribute="trailing" constant="5" id="yfg-qQ-29v"/>
-                                                <constraint firstItem="K43-u9-lYi" firstAttribute="top" secondItem="Bil-Mg-4yD" secondAttribute="top" constant="26" id="zGP-kM-yka"/>
+                                                <constraint firstItem="ZFY-ex-aOD" firstAttribute="top" secondItem="Bil-Mg-4yD" secondAttribute="top" constant="26" id="gn1-YJ-1B7"/>
+                                                <constraint firstAttribute="bottom" secondItem="MG6-Sv-dFO" secondAttribute="bottom" constant="24" id="kIP-Ih-Plg"/>
+                                                <constraint firstItem="ap6-ey-ElT" firstAttribute="top" secondItem="Bil-Mg-4yD" secondAttribute="top" constant="45" id="l89-w4-gOQ"/>
+                                                <constraint firstItem="ap6-ey-ElT" firstAttribute="leading" secondItem="K43-u9-lYi" secondAttribute="trailing" constant="20" id="xkt-nu-ePL"/>
+                                                <constraint firstItem="MG6-Sv-dFO" firstAttribute="top" secondItem="Bil-Mg-4yD" secondAttribute="top" constant="27" id="y1a-eq-M5N"/>
+                                                <constraint firstItem="K43-u9-lYi" firstAttribute="top" secondItem="Bil-Mg-4yD" secondAttribute="top" constant="27" id="zGP-kM-yka"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -200,6 +208,7 @@
                                             <outlet property="ingredeintNameLabel" destination="ZFY-ex-aOD" id="eCb-Xn-cZ9"/>
                                             <outlet property="ingredientImageView" destination="FzC-4V-Rfb" id="Y8a-ur-sSf"/>
                                             <outlet property="multiplierLabel" destination="MG6-Sv-dFO" id="hDr-1F-pHk"/>
+                                            <outlet property="unitsLabel" destination="ap6-ey-ElT" id="0ba-VH-ddF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

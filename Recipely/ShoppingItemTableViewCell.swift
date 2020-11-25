@@ -17,6 +17,8 @@ class ShoppingItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var amountLabel: UILabel!
     
+    @IBOutlet weak var unitsLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -100,24 +100,58 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                     newIngredients.append(dict!)
                 }
             }
-            var shoppingList = user?["shoppingList"]
-            var items = (user?["shoppingList"])! as! Array<Dictionary<String, Any>>
-            for item in items {
-                print("From db: ")
-                print(item["name"])
+            var items = [[String:Any]]()
+            var updatedItems = [[String:Any]]()
+            if user?["shoppingList"]  != nil {
+                items = (user?["shoppingList"]) as! [[String:Any]]
             }
-            for i in newIngredients {
-                //print(i["name"])
-                
-            }
-           
-            print()
+            //var shoppingList = user?["shoppingList"] ?? []
             
-            //print(String(bytes: encoded, encoding: .utf8))
-            //print(encoded)
+            
+           
+        
+            //var items = (user?["shoppingList"]) as! [[String:Any]]
+           
+            if items.isEmpty {
+                for i in newIngredients {
+                    updatedItems.append(i)
+                }
+            } else {
+                for i in newIngredients {
+                    if items.contains(where: {$0["name"] as! String == i["name"] as! String}) {
+                        for var item in items {
+                            if item["name"] as! String == i["name"] as! String {
+                                //print("dup")
+                                var val = (item["amount"] as! Double) + (i["amount"] as! Double)
+                                item["amount"]! = val
+                                //print(val)
+                                //var temp = item
+                                updatedItems.append(item)
+                            }
+                        }
+                    }
+                   
+                            
+                    else {
+                           // if !items.contains(where: {$0["name"] as! String == i["name"] as! String}) {
+                            updatedItems.append(i)
+                            //}
+                            
+                    }
+                    
+                }
+            }
+            user?["shoppingList"] = updatedItems
+            
+            /*if items.contains(where: {$0["name"] as! String == i["name"] as! String}) {
+                items.append(i)
+            } else {
+                items.append(i)
+            }*/
+          
             //var dict = convertToDictionary(text: String(bytes:  encoded, encoding: .utf8) ?? "")
             
-            user?["shoppingList"] = newIngredients
+           
            
             user?.saveInBackground {
               (success: Bool, error: Error?) in
