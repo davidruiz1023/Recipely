@@ -102,9 +102,9 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
             if let imageData = data {
                 cell.ingredientImageView.image = UIImage(data: imageData)
             }
+        } else {
+            cell.ingredientImageView.af.setImage(withURL: URL(string: "https://spoonacular.com/ingredients/.jpg")!)
         }
-        //cell.ingredientImageView.af.setImage(withURL: URL(string: ingredient["image"]! as! String)!)
-        
         cell.ingredeintNameLabel.text = ingredient["name"] as? String
         
         var amount:Double = ingredient["amount"] as? Double ?? 0.00
