@@ -46,6 +46,10 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         instructionsTableview.dataSource = self
         instructionsTableview.delegate = self
+        
+        self.instructionsTableview.tableFooterView = UIView()
+        self.ingredientsTableView.tableFooterView = UIView()
+        
         if (self.recipeInfo == nil) {
             self.instructionHeadLabel.text = "No instructions available at this moment."
         }
