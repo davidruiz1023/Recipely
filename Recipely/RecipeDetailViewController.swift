@@ -131,25 +131,19 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                         }
                     }
                    
-                            
                     else {
-                           // if !items.contains(where: {$0["name"] as! String == i["name"] as! String}) {
-                            updatedItems.append(i)
-                            //}
-                            
+                        updatedItems.append(i)
                     }
                     
                 }
+                
+                for currItem in items {
+                    if !updatedItems.contains(where: {$0["name"] as! String == currItem["name"] as! String}) {
+                        updatedItems.append(currItem)
+                    }
+                }
             }
             user?["shoppingList"] = updatedItems
-            
-            /*if items.contains(where: {$0["name"] as! String == i["name"] as! String}) {
-                items.append(i)
-            } else {
-                items.append(i)
-            }*/
-          
-            //var dict = convertToDictionary(text: String(bytes:  encoded, encoding: .utf8) ?? "")
             
            
            

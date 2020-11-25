@@ -115,7 +115,7 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         formatter.maximumFractionDigits = 2
         
         cell.amountLabel.text = formatter.string(from: amount as NSNumber)
-        
+        cell.unitsLabel.text = ingredient["unit"] as? String ?? ""
         return cell
     }
     
