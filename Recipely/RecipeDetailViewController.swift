@@ -106,8 +106,8 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
             }
             var items = [[String:Any]]()
             var updatedItems = [[String:Any]]()
-            if user?["shoppingList"]  != nil {
-                items = (user?["shoppingList"]) as! [[String:Any]]
+            if user!["shoppingList"]  != nil {
+                items = (user!["shoppingList"]) as! [[String:Any]]
             }
             //var shoppingList = user?["shoppingList"] ?? []
             
@@ -147,11 +147,12 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
                     }
                 }
             }
-            user?["shoppingList"] = updatedItems
+            
+            user!.setValue(updatedItems, forKey: "shoppingList")
             
            
            
-            user?.saveInBackground {
+            user!.saveInBackground {
               (success: Bool, error: Error?) in
               if (success) {
                 print("added items to list")
