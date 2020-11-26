@@ -24,7 +24,7 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         shoppingListTableView.delegate = self
         shoppingListTableView.estimatedRowHeight = 44
         refreshControl.addTarget(self, action: #selector(loadShoppingList), for: .valueChanged)
-        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadShoppingList), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(loadShoppingList), userInfo: nil, repeats: true)
         self.shoppingListTableView.refreshControl = refreshControl
         self.shoppingListTableView.tableFooterView = UIView()
         //shoppingListTableView.rowHeight = UITableView.automaticDimension
@@ -48,6 +48,15 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
                     shoppingList.append(item)
                 }
             }
+        }
+        user!.setValue(shoppingList, forKey: "shoppingList")
+        user!.saveInBackground {
+          (success: Bool, error: Error?) in
+          if (success) {
+            print("updated and removed ")
+          } else {
+            print(error?.localizedDescription as Any)
+          }
         }
         // update table
         self.shoppingListTableView.reloadData()
@@ -117,13 +126,20 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         //var userList = user?["shoppingList"]
         
         if editingStyle == .delete {
+            var tempList = [[String:Any]]()
+            
             shoppingList.remove(at: indexPath.row)
             shoppingListTableView.deleteRows(at: [indexPath], with: .left)
-            user?["shoppingList"] = shoppingList
-            user?.saveInBackground {
+            
+            for i in shoppingList {
+                tempList.append(i)
+            }
+            
+            user!.setValue(tempList, forKey: "shoppingList")
+            user!.saveInBackground {
               (success: Bool, error: Error?) in
               if (success) {
-                print("removed " + (ingredient["name"] as! String))
+                print("updated and removed " + (ingredient["name"] as! String))
               } else {
                 print(error?.localizedDescription as Any)
               }
