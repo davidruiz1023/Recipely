@@ -24,7 +24,7 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         shoppingListTableView.delegate = self
         shoppingListTableView.estimatedRowHeight = 44
         refreshControl.addTarget(self, action: #selector(loadShoppingList), for: .valueChanged)
-        //Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadShoppingList), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(loadShoppingList), userInfo: nil, repeats: true)
         self.shoppingListTableView.refreshControl = refreshControl
         self.shoppingListTableView.tableFooterView = UIView()
         //shoppingListTableView.rowHeight = UITableView.automaticDimension
