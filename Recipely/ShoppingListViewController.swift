@@ -49,6 +49,15 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
                 }
             }
         }
+        user!.setValue(shoppingList, forKey: "shoppingList")
+        user!.saveInBackground {
+          (success: Bool, error: Error?) in
+          if (success) {
+            print("updated and removed ")
+          } else {
+            print(error?.localizedDescription as Any)
+          }
+        }
         // update table
         self.shoppingListTableView.reloadData()
         
