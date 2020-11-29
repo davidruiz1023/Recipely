@@ -41,7 +41,7 @@ Users can search recipes by ingredients and store them as favorites. A user can 
 - [x] 2. User can search recipes by ingredients
 - [ ] 3. User can view their favorited recipes
 - [x] 4. User can click recipe and see info about it
-- [ ] 5. User can add ingredients to a shopping list from a recipe
+- [x] 5. User can add ingredients to a shopping list from a recipe
 
 ## Video Walkthrough
 
@@ -53,7 +53,9 @@ A walkthrough of implemented user stories:<br>
 - [ ] 3. User can view their favorited recipes<br>
 - [x] 4. User can click recipe and see info about it<br>
 <img src='https://i.imgur.com/ez3Ugwg.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><br>
-- [ ] 5. User can add ingredients to a shopping list from a recipe<br>
+- [x] 5. User can add ingredients to a shopping list from a recipe<br>
+<img src='https://i.imgur.com/J84oEC5.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><br>
+
 ### 2. Screen Archetypes
 
 * Login
