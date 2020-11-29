@@ -55,6 +55,9 @@ A walkthrough of implemented user stories:<br>
 <img src='https://i.imgur.com/ez3Ugwg.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><br>
 - [x] 5. User can add ingredients to a shopping list from a recipe<br>
 <img src='https://i.imgur.com/J84oEC5.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><br>
+ User can remove items from shopping list<br>
+<img src='https://i.imgur.com/DBqaoZ7.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><br>
+
 
 ### 2. Screen Archetypes
 
