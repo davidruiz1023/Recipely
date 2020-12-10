@@ -55,6 +55,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         }
         setOutlets()
        
+        isFavorite()
        
     }
     
@@ -63,9 +64,60 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         let toBeFavorited = !favorited
         if (toBeFavorited) {
             self.setFavoritedImage(true)
-                  
+            self.favoriteRecipe()
         } else {
             self.setFavoritedImage(false)
+            self.unfavoriteRecipe()
+        }
+    }
+    
+    func isFavorite() {
+        let user = PFUser.current()!
+        
+        let query = PFQuery(className: "Favorites")
+        query.whereKey("user", equalTo: user.objectId!)
+        query.whereKey("recipe", equalTo: currentRecipe.id!)
+        
+        query.findObjectsInBackground { (objs, error) in
+            if objs != nil {
+                if objs!.count > 0 {
+                    self.favorited = true
+                    self.setFavoritedImage(true)
+                }
+            }
+        }
+    }
+    
+    func favoriteRecipe() {
+        let user = PFUser.current()
+
+        let favorite = PFObject(className: "Favorites")
+        favorite["user"] = user!.objectId!
+        favorite["recipe"] = currentRecipe.id!
+        
+        favorite.saveInBackground { (success, error) in
+            if success {
+                print("Favorite saved")
+            } else {
+                print("Error saving favorite")
+            }
+        }
+        
+    }
+    
+    func unfavoriteRecipe() {
+        let user = PFUser.current()!
+        
+        let query = PFQuery(className: "Favorites")
+        query.whereKey("user", equalTo: user.objectId!)
+        query.whereKey("recipe", equalTo: currentRecipe.id!)
+        
+        query.findObjectsInBackground { (objs, error) in
+            if objs != nil {
+                for obj in objs! {
+                    obj.deleteEventually()
+                }
+            }
         }
     }
     
