@@ -95,6 +95,20 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         favorite["user"] = user!.objectId!
         favorite["recipe"] = currentRecipe.id!
         
+        do {
+            let jsonData = try JSONEncoder().encode(currentRecipe)
+            let jsonString = String(data: jsonData, encoding: .utf8)!
+            print(jsonString)
+
+            var decodedRecipe = try JSONDecoder().decode(Recipe.self , from: jsonData)
+            print(decodedRecipe)
+            
+            favorite["data"] = jsonString
+        } catch {
+            print(error)
+            
+        }
+        
         favorite.saveInBackground { (success, error) in
             if success {
                 print("Favorite saved")

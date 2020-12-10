@@ -18,7 +18,7 @@ struct Recipe: Codable {
     let imageType : String?
     let likes : Int?
     let missedIngredientCount : Int?
-    let missedIngredients : [Ingredient]?
+    var missedIngredients : [Ingredient]?
     let title : String?
     let unusedIngredients : [Ingredient]?
     let usedIngredientCount : Int?
